@@ -1,134 +1,236 @@
-# Byggmaterialer.no - High Fidelity Prototype
+# ByggOm - Next.js Marketplace for Construction Materials
 
-En moderne, interaktiv prototype av en norsk byggmaterialer-markedsplass basert på wireframes.
+A modern Norwegian marketplace for sustainable construction materials built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## Funksjoner
+## Features
 
-### 🏠 Hjemmeside (Hovedside)
-- Hero-bilde med gradient bakgrunn
-- Søkefunksjon som leder til produktside
-- Tre utforskningskategorier:
-  - Utforsk etter sted (Nord-Norge, Trøndelag, Vestlandet, Østlandet, Sørlandet)
-  - Utforsk etter kategori (Tømmer, Vindu, Mur, Tak, Trapper)
-  - Utforsk etter materiale (Stål, Teak, Glass, Eik, Stein)
-- Klikkbare elementer som filtrerer produkter
+- 🏠 **Homepage** with hero section and exploration cards
+- 🛍️ **Product Catalog** with advanced filtering and search
+- 📦 **Shopping Basket** with item management
+- 💬 **Messaging System** for buyer-seller communication
+- 👤 **User Profiles** with statistics and order history
+- 📝 **Ad Creation** for listing materials
+- 📰 **Blog Section** with sustainability content
+- 📱 **Responsive Design** optimized for all devices
+- 🎨 **Modern UI** with smooth animations and transitions
 
-### 📦 Produktoversikt (Produktoversikt)
-- Sidebar med omfattende filtre:
-  - Materialkategorier (Tre, Glass, Stål, Isolasjon, etc.)
-  - Pris- og vektområder
-  - Geografiske områder
-- Søkefunksjon
-- Aktive filter-tags med mulighet for fjerning
-- Produktkort i grid-layout med hover-effekter
-- Responsivt design
+## Technology Stack
 
-### 🔍 Produktside (Vareside)
-- Detaljert produktinformasjon
-- Spesifikasjoner (tykkelse, vekt, lengde, bredde, pris)
-- Produktbeskrivelse
-- "Bestill"-knapp med animasjon
-- Responsivt layout
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: React Context API with useReducer
+- **Icons**: Font Awesome
+- **Data**: JSON-based product data with API routes
 
-## Tekniske Detaljer
-
-### Teknologier
-- **HTML5**: Semantisk markup
-- **CSS3**: Modern styling med Flexbox og Grid
-- **JavaScript (ES6+)**: Interaktiv funksjonalitet
-- **Font Awesome**: Ikoner
-- **Google Fonts**: Inter font-familie
-
-### Design System
-- **Fargepalett**: Norsk blå (#1e40af) som primærfarge
-- **Typografi**: Inter font med forskjellige vekter
-- **Spacing**: Konsistent 8px grid-system
-- **Border radius**: 8px-16px for moderne utseende
-- **Skygger**: Subtile box-shadows for dybde
-
-### Responsivt Design
-- **Desktop**: Full funksjonalitet med sidebar
-- **Tablet**: Tilpasset layout
-- **Mobile**: En-kolonne layout med touch-støtte
-
-## Interaktive Funksjoner
-
-### Navigasjon
-- Single Page Application (SPA) arkitektur
-- Smooth overganger mellom sider
-- Browser back/forward støtte
-- Keyboard navigasjon (ESC for hjem, Enter for søk)
-
-### Søk og Filtrering
-- Real-time søk med debouncing
-- Multiple filter-kombinasjoner
-- Filter-tags med enkel fjerning
-- Automatisk produktfiltrering
-
-### Animasjoner
-- Fade-in effekter ved sidebytte
-- Hover-effekter på interaktive elementer
-- Loading states for knapper
-- Smooth scrolling
-
-### Touch-støtte
-- Swipe-navigasjon på mobile enheter
-- Touch-friendly knapper og lenker
-
-## Filstruktur
+## Project Structure
 
 ```
-high/
-├── index.html          # Hovedfil med all HTML-struktur
-├── styles.css          # Komplett CSS med responsive design
-├── script.js           # JavaScript funksjonalitet
-└── README.md           # Denne filen
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/               # API routes
+│   ├── products/          # Product pages
+│   ├── basket/           # Shopping basket
+│   ├── messages/         # Messages
+│   ├── profile/          # User profile
+│   ├── annonse/          # Create listing
+│   ├── blog/             # Blog content
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Homepage
+├── components/           # React components
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── HeroSection.tsx
+│   ├── ExploreSections.tsx
+│   ├── FiltersSidebar.tsx
+│   ├── ProductsGrid.tsx
+│   ├── BasketContent.tsx
+│   ├── MessagesContent.tsx
+│   ├── ProfileContent.tsx
+│   ├── AnnonseForm.tsx
+│   ├── BlogContent.tsx
+│   └── MobileMenu.tsx
+├── lib/                  # Utilities and context
+│   └── AppContext.tsx    # Global state management
+├── types/                # TypeScript type definitions
+│   └── index.ts
+└── data/                 # Static data
+    └── products.json
 ```
 
-## Bruk
+## Getting Started
 
-1. Åpne `index.html` i en moderne nettleser
-2. Naviger mellom sidene ved å klikke på elementer
-3. Test søkefunksjonen på hjemmesiden
-4. Filtrer produkter på produktsiden
-5. Se produktdetaljer ved å klikke på produktkort
-6. Test responsive design ved å endre vindusstørrelse
+### Prerequisites
 
-## Browser-støtte
+- Node.js 18+ 
+- npm or yarn
 
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
+### Installation
 
-## Utviklingsnotater
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd high-fidelity-1600
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## Key Features Implementation
 
 ### State Management
-Applikasjonen bruker et enkelt state-objekt (`appState`) for å holde styr på:
-- Aktiv side
-- Aktive filtre
-- Produktdata
-- Filtrerte produkter
+The application uses React Context API with useReducer for global state management:
+- Product data and filtering
+- Shopping basket functionality
+- User messages
+- Active filters and search terms
 
-### Performance
-- Debounced søk for bedre ytelse
-- Lazy loading av animasjoner
-- Effektiv DOM-manipulasjon
+### Responsive Design
+- Mobile-first approach with Tailwind CSS
+- Adaptive navigation with mobile menu
+- Responsive grid layouts
+- Touch-friendly interactions
 
-### Tilgjengelighet
-- Semantisk HTML
-- Keyboard navigasjon
-- ARIA-labels (kan utvides)
-- Kontrast-vennlige farger
+### Data Flow
+- Products loaded from JSON via API routes
+- Real-time filtering and search
+- Persistent state with localStorage
+- Optimistic UI updates
 
-## Fremtidige Forbedringer
+## Pages Overview
 
-- [ ] Backend-integrasjon
-- [ ] Brukerautentisering
-- [ ] Produktbilder
-- [ ] Chat-funksjonalitet
-- [ ] PWA-funksjoner
-- [ ] Testing (Jest/Cypress)
-- [ ] TypeScript konvertering
+### Homepage (`/`)
+- Hero section with search functionality
+- Exploration cards for materials, regions, and categories
+- Direct navigation to product listings
 
+### Products (`/products`)
+- Advanced filtering sidebar
+- Search functionality
+- Product grid with lazy loading
+- Filter tags with removal capability
 
+### Product Detail (`/products/[id]`)
+- Detailed product information
+- Specifications and descriptions
+- Add to basket functionality
+- Product history and origin
+
+### Shopping Basket (`/basket`)
+- Item management with quantities
+- Message seller functionality
+- Empty state with navigation
+- Persistent across sessions
+
+### Messages (`/messages`)
+- Sent messages to sellers
+- Message status tracking
+- Product context for each message
+- Delete message functionality
+
+### User Profile (`/profile`)
+- User information and statistics
+- Recent orders and status
+- Contact information
+- Interests and badges
+
+### Create Listing (`/annonse`)
+- Comprehensive form for material listing
+- Image upload with preview
+- Form validation and submission
+- Multi-step form sections
+
+### Blog (`/blog`)
+- Featured articles
+- Article grid with categories
+- Newsletter subscription
+- Responsive card layouts
+
+## Styling Approach
+
+The project uses Tailwind CSS with custom component classes defined in `globals.css`:
+- Component-based styling with `@layer components`
+- Utility classes for responsive design
+- Custom animations and transitions
+- Consistent color scheme and typography
+
+## Data Management
+
+- **Products**: Static JSON data with API route
+- **State**: React Context with localStorage persistence
+- **Images**: External URLs (Unsplash, Wikimedia)
+- **User Data**: Mock data for demonstration
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Responsive design for all screen sizes
+- Progressive enhancement approach
+
+## Development Notes
+
+### State Persistence
+User data (basket, messages, filters) is automatically saved to localStorage and restored on page reload.
+
+### Performance Optimizations
+- Lazy loading for product images
+- Debounced search functionality
+- Efficient filtering algorithms
+- Minimal re-renders with proper state management
+
+### Accessibility
+- Semantic HTML structure
+- Keyboard navigation support
+- Screen reader friendly
+- High contrast ratios
+- Focus indicators
+
+## Future Enhancements
+
+- User authentication system
+- Real-time messaging
+- Payment integration
+- Advanced search with AI
+- Mobile app development
+- Multi-language support
+- Admin dashboard
+- Analytics integration
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For questions or support, please contact the development team.
+
+---
+
+Built with ❤️ using Next.js and modern web technologies.
