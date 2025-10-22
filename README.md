@@ -227,6 +227,16 @@ User data (basket, messages, filters) is automatically saved to localStorage and
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Design Documentation
+
+For detailed information about the design process, user testing findings, and design decisions, see [DESIGN_DOCUMENTATION.md](./DESIGN_DOCUMENTATION.md).
+
+This document includes:
+- User testing results from mid-fidelity prototype
+- Design changes implemented based on user feedback
+- Technical choices and UI/UX principles
+- Comprehensive feature overview with rationale
+
 ## Contact
 
 For questions or support, please contact the development team.

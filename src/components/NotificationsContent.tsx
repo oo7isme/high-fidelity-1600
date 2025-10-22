@@ -197,7 +197,7 @@ export default function NotificationsContent() {
   return (
     <div className="notifications-container">
       <div className="notifications-header">
-        <h1>Varsler</h1>
+        <h1>Varslinger</h1>
         <p className="notifications-subtitle">Hold deg oppdatert på nye treff og aktivitet</p>
         
         {unreadCount > 0 && (

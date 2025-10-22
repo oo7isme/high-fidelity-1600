@@ -32,16 +32,16 @@ export default function MobileMenu({ isOpen, onClose, basketCount, messageCount,
             <i className="fas fa-box"></i>
             <span>Produkter</span>
           </Link>
+          <Link href="/annonse" className="mobile-menu-item" onClick={onClose}>
+            <i className="fas fa-wrench"></i>
+            <span>Ny Annonse</span>
+          </Link>
           <Link href="/messages" className="mobile-menu-item" onClick={onClose}>
             <i className="fas fa-comments"></i>
             <span>Meldinger</span>
             {messageCount > 0 && (
               <span className="menu-badge">{messageCount}</span>
             )}
-          </Link>
-          <Link href="/annonse" className="mobile-menu-item" onClick={onClose}>
-            <i className="fas fa-wrench"></i>
-            <span>Ny Annonse</span>
           </Link>
           <Link href="/basket" className="mobile-menu-item" onClick={onClose}>
             <i className="fas fa-shopping-cart"></i>

@@ -122,8 +122,6 @@ export default function AnnonseForm() {
               <option value="kg">kg</option>
             </select>
           </div>
-        </div>
-        
         <div className="form-group">
           <label htmlFor="condition">Tilstand</label>
           <select id="condition" name="condition">
@@ -134,6 +132,8 @@ export default function AnnonseForm() {
             <option value="Trenger reparasjon">Trenger reparasjon</option>
           </select>
         </div>
+        </div>
+        
       </div>
       
       <div className="form-section">

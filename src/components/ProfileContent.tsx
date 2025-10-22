@@ -76,23 +76,7 @@ export default function ProfileContent() {
             <p>Jeg er en erfaren byggentreprenør fra Bergen som spesialiserer meg på bærekraftige byggeprosjekter. Jeg har jobbet med gjenbruk av byggematerialer i over 10 år og er lidenskapelig opptatt av å redusere avfall i byggebransjen.</p>
           </div>
           
-          <div className="profile-section">
-            <h3>Kontaktinformasjon</h3>
-            <div className="contact-info">
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <span>erik.hansen@bygg.no</span>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <span>+47 123 45 678</span>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-building"></i>
-                <span>Hansen Bygg AS</span>
-              </div>
-            </div>
-          </div>
+      
           
           <div className="profile-section">
             <h3>Interesser</h3>
