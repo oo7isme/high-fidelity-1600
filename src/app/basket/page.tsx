@@ -10,7 +10,7 @@ export default function BasketPage() {
     <div className="page">
       <div className="basket-container">
         <div className="basket-header">
-          <h1>Varelise</h1>
+          <h1>Vareliste</h1>
           <p className="basket-subtitle">Gjenbrukte byggematerialer</p>
         </div>
         
