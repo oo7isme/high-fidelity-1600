@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { useAppContext } from '@/lib/AppContext';
 import { Product } from '@/types';
 
@@ -89,12 +90,94 @@ export default function ProductDetailPage() {
         <h1 className="product-title">{product.title}</h1>
         
         <div className="product-detail-content">
-          <div className="product-image-large">
-            <img 
-              src={product.image} 
-              alt={`${product.title} - detaljert bilde`} 
-              className="product-detail-img"
-            />
+          <div className="product-image-column gap-2">
+            <div className="product-image-large">
+              <img 
+                src={product.image} 
+                alt={`${product.title} - detaljert bilde`} 
+                className="product-detail-img"
+              />
+            </div>
+            
+            {/* Seller Information Box */}
+            <div className="seller-info-box">
+              <div className="seller-header">
+                <h3>
+                  <i className="fas fa-user"></i>
+                  Om selgeren
+                </h3>
+              </div>
+              
+              <div className="seller-content">
+                <div className="seller-profile">
+                  <div className="seller-avatar">
+                    <img 
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                      alt="Erik Hansen" 
+                    />
+                    <div className="seller-status online"></div>
+                  </div>
+                  
+                  <div className="seller-info">
+                    <h4>Erik Hansen</h4>
+                    <p className="seller-title">Byggentreprenør</p>
+                    <p className="seller-location">
+                      <i className="fas fa-map-marker-alt"></i>
+                      Bergen, Vestlandet
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="seller-rating">
+                  <div className="rating-display">
+                    <div className="rating-stars">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star-half-alt"></i>
+                    </div>
+                    <span className="rating-value">4.8</span>
+                    <span className="rating-count">(24 vurderinger)</span>
+                  </div>
+                </div>
+                
+                <div className="seller-badges">
+                  <span className="seller-badge verified">
+                    <i className="fas fa-check-circle"></i>
+                    Verifisert
+                  </span>
+                  <span className="seller-badge premium">
+                    <i className="fas fa-crown"></i>
+                    Premium medlem
+                  </span>
+                  <span className="seller-badge member">
+                    <i className="fas fa-calendar"></i>
+                    3 år medlem
+                  </span>
+                </div>
+                
+                <div className="seller-stats">
+                  <div className="seller-stat">
+                    <span className="stat-number">12</span>
+                    <span className="stat-label">Bestillinger</span>
+                  </div>
+                  <div className="seller-stat">
+                    <span className="stat-number">98%</span>
+                    <span className="stat-label">Svarfrekvens</span>
+                  </div>
+                  <div className="seller-stat">
+                    <span className="stat-number">&lt;1t</span>
+                    <span className="stat-label">Gjennomsnittlig svar</span>
+                  </div>
+                </div>
+                
+                <Link href="/profile" className="view-profile-btn">
+                  <i className="fas fa-user-circle"></i>
+                  Se full profil
+                </Link>
+              </div>
+            </div>
           </div>
           
           <div className="product-details">

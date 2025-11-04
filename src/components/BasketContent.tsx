@@ -18,7 +18,7 @@ export default function BasketContent() {
     if (!messageText.trim()) {
       alert('Vennligst skriv en melding før du sender.');
       return;
-    }
+    } alert("Meldingen har blitt sendt, du kan se statusen i meldinger siden");
 
     const item = state.basket.find(item => item.id === itemId);
     if (!item) return;
