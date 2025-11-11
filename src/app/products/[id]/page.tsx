@@ -147,10 +147,7 @@ export default function ProductDetailPage() {
                     <i className="fas fa-check-circle"></i>
                     Verifisert
                   </span>
-                  <span className="seller-badge premium">
-                    <i className="fas fa-crown"></i>
-                    Premium medlem
-                  </span>
+                 
                   <span className="seller-badge member">
                     <i className="fas fa-calendar"></i>
                     3 år medlem
